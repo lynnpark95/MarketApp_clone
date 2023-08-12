@@ -1,0 +1,36 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  /*view width 100%*/
+  width: 100vw;
+  padding-bottom: 30px;
+  border-top: 1px solid #eaeaea;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: white;
+}
+.footer-block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer-icons {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* changed to column so top and bottom aligned */
+  flex-direction: column;
+  margin: 0 20px 0 20px;
+  cursor: pointer;
+}
+
+.footer-icons__img {
+  width: 30px;
+}
+
+.footer-icons__desc {
+  font-weight: bold;
+  margin-top: 5px;
+  transform: scale(0.8);
+}
