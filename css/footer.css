@@ -25,8 +25,25 @@ footer {
   cursor: pointer;
 }
 
+@keyframes icons-floating {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .footer-icons__img {
   width: 30px;
+}
+
+/* when icons are hovered over, only affect the img */
+.footer-icons:hover .footer-icons__img {
+  animation: 1s icons-floating;
 }
 
 .footer-icons__desc {
