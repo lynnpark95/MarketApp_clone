@@ -12,7 +12,7 @@ body {
 
 .media-info-msg {
   /* fixed upperside */
-  position: absolute;
+  position: fixed;
   /* fix top and left */
   top: 0;
   left: 0;
@@ -28,6 +28,6 @@ body {
 
 @media screen and (max-width: 500px) {
   .media-info-msg {
-    opacity: 0;
+    display: none;
   }
 }
