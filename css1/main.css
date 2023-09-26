@@ -1,0 +1,99 @@
+.item-info {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.item-info img {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+}
+
+.item-info_text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.item-info_text_price {
+  font-weight: bold;
+}
+
+.textbox_profileimg img {
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+.textbox_seller {
+  display: flex;
+}
+.textbox_time {
+  display: flex;
+  align-items: end;
+  margin-left: 10px;
+}
+
+.textbox_text {
+  width: 500px;
+  height: 60px;
+  border-radius: 18px;
+  background-color: #f48024;
+  margin: 10px 5px 10px 5px;
+}
+
+.textbox_text p {
+  margin: 20px 10px 20px 20px;
+  color: white;
+}
+
+.textbox_buyer {
+  display: flex;
+}
+.textbox_text1 {
+  width: 200px;
+  height: 50px;
+  border-radius: 18px;
+  background-color: #b9b3ad;
+  margin: 10px 5px 10px 5px;
+}
+
+.textbox_text1 p {
+  margin: 15px 10px 10px 20px;
+  color: white;
+}
+.schedule {
+  width: 450px;
+  height: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-left: 10px;
+}
+.schedule_icon {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px 0 30px;
+}
+.schedule_icon_calendar {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  margin-right: 10px;
+}
+.schedule_icon_calendar img {
+  width: 25px;
+  height: 25px;
+  margin: 1px 0 2px 2px;
+}
+.schedule_date {
+  font-weight: bold;
+}
+.schedule_text {
+  display: flex;
+  margin: 0 10px 10px 70px;
+}

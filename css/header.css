@@ -19,6 +19,7 @@ header {
   font-size: 12px;
   font-weight: bold;
 }
+
 /* menu bar */
 .menu-bar {
   display: flex;
@@ -55,8 +56,4 @@ header {
 .menu-bar__icons img {
   width: 25px;
   margin-right: 10px;
-}
-
-header {
-  border-bottom: 1px;
 }

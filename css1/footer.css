@@ -1,0 +1,32 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 470px;
+  background-color: rgb(217, 215, 215);
+  padding: 10px 0 10px 0;
+}
+.footer-contents {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer_textbox {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #ffffff;
+}
+
+.footer_arrow,
+.footer_plus,
+.footer_textbox img {
+  width: 25px;
+  height: 25px;
+  margin: 2px 10px 0 0;
+}
+
+.footer_textbox input {
+  margin-left: 10px;
+  border: none;
+}

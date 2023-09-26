@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Karrot</title>
     <!-- by deafault, css has padding so we reset them to customize perfectly -->
-
     <link
       rel="stylesheet"
       as="style"
@@ -16,10 +15,10 @@
   </head>
   <body>
     <header>
-      <!-- block element modifier bem 명령법 -->
+      <!-- block element modifier (bem) -->
       <div class="info-bar">
         <div class="info-bar__time">20:55</div>
-        <!-- alt is for when image does not upload properly inform what this is -->
+        <!-- alt is for when image does not upload properly inform what this is doing -->
         <div class="info-bar__icon">
           <img src="assets/chart-bar.svg" alt="chart-bar" />
           <img src="assets/wifi.svg" alt="wifi" />
@@ -93,7 +92,24 @@
           </div>
         </div>
         <div class="write-btn">+ Add items</div>
+
+        <div id="chatSystemPage" style="display: none">
+          <!-- Chat system code -->
+          <div class="chat-system" id="chatSystem">
+            <!-- Chat messages will go here -->
+            <div class="chat-messages">
+              <!-- Individual chat messages can be added here -->
+            </div>
+
+            <!-- Chat input box -->
+            <div class="chat-input">
+              <input type="text" placeholder="Type your message" />
+              <button>Send</button>
+            </div>
+          </div>
+        </div>
       </main>
+
       <footer>
         <div class="footer-block">
           <div class="footer-icons">
@@ -130,5 +146,6 @@
       </footer>
     </header>
     <div class="media-info-msg">"Please reduce the screen size"</div>
+    <script src="script.js"></script>
   </body>
 </html>
