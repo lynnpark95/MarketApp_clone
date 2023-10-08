@@ -10,12 +10,17 @@ cur=con.cursor()
 app=FastAPI()
 
 @app.post('/items')
-def create_items(image:UploadFile,
+async def create_items(image:UploadFile,
                  title:Annotated[str,Form()],
                  price:Annotated[int,Form()],
                  description:Annotated[str,Form()],
                  place:Annotated[str,Form()]):
-    print(image,title,price,description,place)
+    image_bytes=await image.read()
+    cur.execute(f"""
+                INSERT INTO items(title,image,price,description,place)
+                VALUES ('{title}','{image_bytes.hex()}',{price},'{description}', '{place}')
+                """)
+    con.commit()
     return '200'
     
 app.mount("/", StaticFiles(directory='frontend', html=True), name='frontend')
