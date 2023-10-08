@@ -1,4 +1,6 @@
 from fastapi import FastAPI,UploadFile,Form
+from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 from fastapi.staticfiles import StaticFiles
 from typing import Annotated
 import sqlite3
@@ -24,5 +26,23 @@ async def create_items(image:UploadFile,
                 """)
     con.commit()
     return '200'
+
+@app.get('/items')
+async def get_items():
+    #calling column names as well
+    con.row_factory=sqlite3.Row
+    
+    #updateing current location of connection 
+    cur =con.cursor()
+    
+    rowArray=cur.execute(f"""
+                     SELECT * FROM items;
+                     
+                     """).fetchall()
+    
+    
+    # will return {id:1,title:"selling knife",description:...}
+    return JSONResponse(jsonable_encoder(dict(row) for row in rowArray))
+    
     
 app.mount("/", StaticFiles(directory='frontend', html=True), name='frontend')
