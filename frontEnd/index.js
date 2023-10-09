@@ -1,18 +1,21 @@
-/* <div class="item-list">
-          <div class="item-list__img">
-            <img src="assets/img.svg" alt="" />
-          </div>
-          <div class="item-list__info">
-            <div class="item-list__info-title">Barbie Doll</div>
-            <div class="item-list__info-meta">New York City</div>
-            <div class="item-list__info-price">$1000</div>
-          </div>
-        </div> */
+const calcTime = (timestamp) => {
+  //need to update time
+  const currTime = new Date().getTime();
+  const time = new Date(currTime - timestamp);
+  const hour = time.getHours();
+  const minute = time.getMinutes();
+  const second = time.getSeconds();
+
+  if (hour > 0) return `${hour} hour ago`;
+  else if (minute > 0) `${minute} minute ago`;
+  else if (second > 0) `${second} second ago`;
+  else "just now";
+};
 
 const renderData = (data) => {
   const main = document.querySelector("main");
-
-  data.forEach((obj) => {
+  //reversing array to display the most recent post
+  data.reverse().forEach(async (obj) => {
     const Div = document.createElement("div");
     Div.className = "item-list";
 
@@ -20,7 +23,10 @@ const renderData = (data) => {
     imgDiv.className = "item-list__img";
 
     const img = document.createElement("img");
-    img.src = "assets/img.svg";
+    const res = await fetch(`/images/${obj.id}`);
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    img.src = url;
 
     const InfoDiv = document.createElement("div");
     InfoDiv.className = "item-list__info";
@@ -31,7 +37,7 @@ const renderData = (data) => {
 
     const InfoDivMetaDiv = document.createElement("div");
     InfoDivMetaDiv.className = "item-list__info-meta";
-    InfoDivMetaDiv.innerText = obj.place;
+    InfoDivMetaDiv.innerText = obj.place + " " + calcTime(obj.insertAt);
 
     const InfoDivPriceDiv = document.createElement("div");
     InfoDivPriceDiv.className = "item-list__info-price";

@@ -3,6 +3,7 @@ const form = document.getElementById("addItem-form");
 const handleSubmit = async (event) => {
   event.preventDefault();
   const body = new FormData(form);
+
   body.append("insertAt", new Date().getTime());
   try {
     const res = await fetch("/items", {
